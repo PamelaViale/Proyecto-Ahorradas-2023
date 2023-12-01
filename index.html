@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e0b1eca94c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
 <body>
-    
+    <nav class="bg-green-500 h-24 flex justify-between items-center p-4">
+        <div class="flex items-center"><i class="fas fa-wallet text-white text-4xl"></i>
+        <h1 class="text-white ml-2 text-4xl">AhorrADAs</h1></div>
+     
+        <ul class="hidden md:flex space-x-4">
+            <li><i class="fas fa-chart-line text-white"></i><a href="#" class="text-white text-xl ml-2">Balance</a></li>
+            <li><i class="fas fa-tag text-white"></i><a href="#" class="text-white text-xl ml-2">Categoría</a></li>
+            <li><i class="fas fa-chart-pie text-white"></i><a href="#" class="text-white text-xl ml-2">Reportes</a></li>
+        </ul>
+
+ 
+        <div class="md:hidden">
+            <input type="checkbox" id="menuToggle" class="hidden">
+            <label for="menuToggle" class="cursor-pointer text-white">
+                <i class="fas fa-bars"></i>
+            </label>
+            <div class="fixed top-0 left-0 bg-gray-800 w-full h-full opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out" id="mobileMenu">
+                <div class="flex justify-end p-4">
+                    <label for="menuToggle" class="text-white cursor-pointer">
+                        <i class="fas fa-times"></i>
+                    </label>
+                </div>
+                <div class="flex flex-col items-center">
+                    <a href="#" class="block text-white py-2">Balance</a>
+                    <a href="#" class="block text-white py-2">Categoría</a>
+                    <a href="#" class="block text-white py-2">Reportes</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 </body>
 </html>
