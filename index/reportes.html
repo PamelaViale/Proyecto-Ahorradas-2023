@@ -3,10 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+    src="https://kit.fontawesome.com/e0b1eca94c.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdn.tailwindcss.com"></script>
     <title>Reportes</title>
   </head>
-  <body >
-    <nav class="bg-teal-500 h-24 flex justify-between items-center p-4">
+  <body class="bg-gray-200 xl:flex flex-col items-center justify-center">
+    <nav class="bg-teal-500 h-24 flex justify-between items-center p-4 xl:w-screen">
         <div class="flex items-center">
           <i class="fas fa-wallet text-white text-4xl"></i>
           <h1 class="text-white ml-2 text-4xl">AhorrADAs</h1>
@@ -15,7 +20,7 @@
         <ul class="hidden md:flex space-x-4 ">
           <li>
             <i class="fas fa-chart-line text-white"></i
-            ><a href="#" class="text-white text-xl ml-2" id="balance-options">Balance</a>
+            ><a href="/index.html" class="text-white text-xl ml-2" id="balance-options">Balance</a>
           </li>
           <li>
             <i class="fas fa-tag text-white"></i
@@ -53,81 +58,92 @@
       </nav>
 
 
-
-    <div>
-      <div><h2>Reportes</h2></div>
+<!-- centrar el vid en mas de 1024 -->
+    <div class="bg-white mr-4 mt-12 ml-6 p-6 rounded lg:w-11/12 xl:w-6/12">
+      <div><h2 class="text-4xl font-bold mb-12">Reportes</h2></div>
       <section>
-        <div>Resumen</div>
-        <div>
-          <div><h2>Categoría con mayor Ganancia</h2></div>
-          <div>Trabajo</div>
-          <div>+$20000</div>
+        <div class="ml-4">
+        <div class="text-2xl mb-10">Resumen</div>
+        
+        <div class="flex justify-between mb-4">
+          <div><h2 class="flex flex-wrap w-28 mr-2 font-bold lg:w-full">Categoría con mayor Ganancia</h2></div>
+          <div class="bg-green-100 text-green-600 p-2 h-10 flex items-center text-center round ext-green-800 rounded">Trabajo</div>
+          <div class="text-green-500  font-bold">+$20000</div>
         </div>
 
-        <div>
-          <div><h2>Categoría con mayor gasto</h2></div>
-          <div>Comida</div>
-          <div>-$7</div>
+        <div class="flex justify-between mb-4">
+          <div><h2 class="flex flex-wrap w-28 font-bold lg:w-full">Categoría con mayor gasto</h2></div>
+          <div class="bg-green-100 text-green-600 p-2 h-10 flex items-center round ext-green-800 rounded mr-8 lg:mr-2">Comida</div>
+          <div class="text-red-500 font-bold">-$7</div>
         </div>
 
-        <div>
-          <div><h2>Categoría con mayor balance</h2></div>
-          <div>Trabajo</div>
-          <div>$20000</div>
+        <div class="flex justify-between mb-4">
+          <div><h2 class="flex flex-wrap w-28 font-bold lg:w-full">Categoría con mayor balance</h2></div>
+          <div class="bg-green-100 text-green-600 p-2 h-10 flex items-center round ext-green-800 rounded">Trabajo</div>
+          <div class="text-green-500 font-bold">$20000</div>
         </div>
 
-        <div>
-          <div><h2>Mes con mayor ganancia</h2></div>
-          <div>2023/11/20</div>
-          <div>$20000</div>
+        <div class="flex justify-between mb-4">
+          <div><h2 class="flex flex-wrap w-28 font-bold lg:w-full">Mes con mayor ganancia</h2></div>
+          <div class="lg:ml-6">2023/11/20</div>
+          <div class="text-green-500 font-bold">$20000</div>
         </div>
 
-        <div>
-          <div><h2>Mes con mayor gasto</h2></div>
-          <div>2023/11/04</div>
-          <div>-$7</div>
+        <div class="flex justify-between mb-4">
+          <div><h2 class="flex flex-wrap w-28 font-bold lg:w-full">Mes con mayor gasto</h2></div>
+          <div class="mr-8 lg:ml-12">2023/11/04</div>
+          <div class="text-green-500 font-bold">-$7</div>
         </div>
       </section>
 
       <section>
-        <div>Totales por categorías</div>
-        <div>
-          <div><h2>Categoria</h2></div>
-          <div>Ganancias</div>
-          <div>Gastos</div>
-          <div>Balance</div>
+        <div class="ml-4">
+        <div class="text-2xl mb-10 mt-10">Totales por categorías</div>
+
+        
+        <div class="flex justify-between">
+          <div class="flex font-bold">Categoria</div>
+          <div class="flex font-bold">Ganancias</div>
+          <div class="flex font-bold">Gastos</div>
+          <div class="flex font-bold">Balance</div>
         </div>
 
-        <div>
-          <div><h2>Comida</h2></div>
-          <div>+$0</div>
-          <div>-$7</div>
-          <div>$-7</div>
+        <div class="flex justify-between mb-4 mt-4 text-center">
+          <div class="flex text-center font-bold">Comida</div>
+          <div class="text-green-500 font-bold">+$0</div>
+          <div class="text-red-500 font-bold">-$7</div>
+          <div class=" font-bold">$-7</div>
         </div>
 
-        <div>
-          <div><h2>Trabajo</h2></div>
-          <div>+$20000</div>
-          <div>-$0</div>
-          <div>$20000</div>
+        <div class="flex justify-between mb-4 mt-4 text-center ">
+          <div class="flex text-center font-bold">Trabajo</div>
+          <div class="text-green-500 font-bold">+$20000</div>
+          <div class="text-red-500 font-bold">-$0</div>
+          <div class="font-bold">$20000</div>
         </div>
       </section>
+
+
+
       <section>
-        <div><h2>Totales por mes</h2></div>
-        <div>
-            <div><h2>Mes</h2></div>
-            <div>Ganancias</div>
-            <div>Gastos</div>
-            <div>Balance</div>
+        <div class="ml-4">
+        <div class="text-2xl mb-10 mt-10">Totales por mes</div>
+        <div class="flex justify-between mb-4">
+            <div class="flex font-bold">Mes</div>
+            <div class="flex font-bold">Ganancias</div>
+            <div class="flex font-bold">Gastos</div>
+            <div class="flex font-bold">Balance</div>
           </div>
 
-          <div>
-            <div><h2>11/2023</h2></div>
-            <div>+$20000</div>
-            <div>-$7</div>
-            <div>$19993</div>
+          <div class="flex justify-between">
+            <div class="flex text-center font-bold">11/2023</div>
+            <div class="text-green-500 font-bold">+$20000</div>
+            <div class="text-red-500  font-bold">-$7</div>
+            <div class="font-bold">$19993</div>
           </div>
-
+        </div>
+    </div>
+</div>
       </section>
     </div>
   </body>
