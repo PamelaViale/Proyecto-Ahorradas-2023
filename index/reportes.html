@@ -56,70 +56,69 @@
           </div>
         </div>
       </nav>
+      <!-- Termina Nav -->
 
-
-<!-- centrar el vid en mas de 1024 -->
     <div class="bg-white mr-4 mt-12 ml-6 p-6 rounded lg:w-11/12 xl:w-6/12">
       <div><h2 class="text-4xl font-bold mb-12">Reportes</h2></div>
       <section>
         <div class="ml-4">
-        <div class="text-2xl mb-10">Resumen</div>
+        <div class="text-2xl mb-10 font-bold">Resumen</div>
         
         <div class="flex justify-between mb-4">
-          <div><h2 class="flex flex-wrap w-28 mr-2 font-bold lg:w-full">Categoría con mayor Ganancia</h2></div>
-          <div class="bg-green-100 text-green-600 p-2 h-10 flex items-center text-center round ext-green-800 rounded">Trabajo</div>
-          <div class="text-green-500  font-bold">+$20000</div>
+          <div><h2 class="flex flex-wrap w-28 lg:w-full">Categoría con mayor Ganancia</h2></div>
+          <div class="bg-green-100 text-green-600 p-2 h-10 flex items-center ext-green-800 rounded" id="category-work">Trabajo</div>
+          <div class="text-green-500" id="add-profit-work">+$20000</div>
         </div>
 
         <div class="flex justify-between mb-4">
-          <div><h2 class="flex flex-wrap w-28 font-bold lg:w-full">Categoría con mayor gasto</h2></div>
-          <div class="bg-green-100 text-green-600 p-2 h-10 flex items-center round ext-green-800 rounded mr-8 lg:mr-2">Comida</div>
-          <div class="text-red-500 font-bold">-$7</div>
+          <div><h2 class="flex flex-wrap w-28 lg:w-full">Categoría con mayor gasto</h2></div>
+          <div class="bg-green-100 text-green-600 p-2 h-10 flex items-center ext-green-800 rounded mr-8 lg:mr-2" id="add-food">Comida </div>
+          <div class="text-red-500" id="add-profit-food">-$7</div>
         </div>
 
         <div class="flex justify-between mb-4">
-          <div><h2 class="flex flex-wrap w-28 font-bold lg:w-full">Categoría con mayor balance</h2></div>
-          <div class="bg-green-100 text-green-600 p-2 h-10 flex items-center round ext-green-800 rounded">Trabajo</div>
-          <div class="text-green-500 font-bold">$20000</div>
+          <div><h2 class="flex flex-wrap w-28 lg:w-full">Categoría con mayor balance</h2></div>
+          <div class="bg-green-100 text-green-600 p-2 h-10 flex items-center round ext-green-800 rounded" id="add-another-work">Trabajo</div>
+          <div class="text-green-500" id="add-profit-to-work">$20000</div>
         </div>
 
         <div class="flex justify-between mb-4">
-          <div><h2 class="flex flex-wrap w-28 font-bold lg:w-full">Mes con mayor ganancia</h2></div>
-          <div class="lg:ml-6">2023/11/20</div>
-          <div class="text-green-500 font-bold">$20000</div>
+          <div><h2 class="flex flex-wrap w-28 lg:w-full">Mes con mayor ganancia</h2></div>
+          <div class="lg:ml-6" id="add-profit-date" >2023/11/20</div>
+          <div class="text-green-500" id="add-profit-amount">$20000</div>
         </div>
 
         <div class="flex justify-between mb-4">
-          <div><h2 class="flex flex-wrap w-28 font-bold lg:w-full">Mes con mayor gasto</h2></div>
-          <div class="mr-8 lg:ml-12">2023/11/04</div>
-          <div class="text-green-500 font-bold">-$7</div>
+          <div><h2 class="flex flex-wrap w-28 lg:w-full">Mes con mayor gasto</h2></div>
+          <div class="mr-8 lg:ml-12" id="add-expense-date">2023/11/04</div>
+          <div class="text-green-500" id="add-expense-amount">-$7</div>
         </div>
       </section>
 
       <section>
         <div class="ml-4">
-        <div class="text-2xl mb-10 mt-10">Totales por categorías</div>
+        <div class="text-2xl mb-10 mt-10 font-bold">Totales por categorías</div>
 
         
         <div class="flex justify-between">
-          <div class="flex font-bold">Categoria</div>
-          <div class="flex font-bold">Ganancias</div>
-          <div class="flex font-bold">Gastos</div>
-          <div class="flex font-bold">Balance</div>
+          <div class="flex">Categoria</div>
+          <div class="flex">Ganancias</div>
+          <div class="flex">Gastos</div>
+          <div class="flex">Balance</div>
         </div>
 
         <div class="flex justify-between mb-4 mt-4 text-center">
-          <div class="flex text-center font-bold">Comida</div>
-          <div class="text-green-500 font-bold">+$0</div>
-          <div class="text-red-500 font-bold">-$7</div>
-          <div class=" font-bold">$-7</div>
+          <div class="flex text-center">Comida</div>
+          <div class="text-green-500" id="food-profit">+$0</div>
+          <div class="text-red-500" id="food-expense">-$7</div>
+          <div class="" id="food-balance">$-7</div>
         </div>
 
         <div class="flex justify-between mb-4 mt-4 text-center ">
-          <div class="flex text-center font-bold">Trabajo</div>
-          <div class="text-green-500 font-bold">+$20000</div>
-          <div class="text-red-500 font-bold">-$0</div>
-          <div class="font-bold">$20000</div>
+          <div class="flex text-center">Trabajo</div>
+          <div class="text-green-500" id="work-profit">+$20000</div>
+          <div class="text-red-500" id="work-expense">-$0</div>
+          <div class="" id="work-balance">$20000</div>
         </div>
       </section>
 
@@ -127,19 +126,19 @@
 
       <section>
         <div class="ml-4">
-        <div class="text-2xl mb-10 mt-10">Totales por mes</div>
+        <div class="text-2xl mb-10 mt-10 font-bold">Totales por mes</div>
         <div class="flex justify-between mb-4">
-            <div class="flex font-bold">Mes</div>
-            <div class="flex font-bold">Ganancias</div>
-            <div class="flex font-bold">Gastos</div>
-            <div class="flex font-bold">Balance</div>
+            <div class="flex">Mes</div>
+            <div class="flex">Ganancias</div>
+            <div class="flex">Gastos</div>
+            <div class="flex">Balance</div>
           </div>
 
           <div class="flex justify-between">
-            <div class="flex text-center font-bold">11/2023</div>
-            <div class="text-green-500 font-bold">+$20000</div>
-            <div class="text-red-500  font-bold">-$7</div>
-            <div class="font-bold">$19993</div>
+            <div class="flex text-center">11/2023</div>
+            <div class="text-green-500">+$20000</div>
+            <div class="text-red-500">-$7</div>
+            <div class="">$19993</div>
           </div>
         </div>
     </div>
