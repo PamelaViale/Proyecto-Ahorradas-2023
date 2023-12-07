@@ -1,11 +1,22 @@
+//Funciones auxiliares - utilities
+
 const $ = (selector) => document.querySelector(selector)
-const $$ = (selector) => document.querySelector(selector)
+const $$ = (selector) => document.querySelectorAll(selector)
 
 
-//Ocultar filtros 
+//Funcion ocultar filtros
+const hideFilters = (event) => {
+    event.preventDefault(); 
+    const hiddenFilterType = $("#hidden-filter-type")
+    hiddenFilterType.style.display = hiddenFilterType.style.display === "none" ? "block" : "none"
+  }
 
-$("#hideFilters").addEventListener("click", (e)=>{
-    e.preventDefault()
-    $("#hidden-filter-type").style.display = $("#hidden-filter-type").style.display === "none" ? "block" : "none" 
+  $("#hideFilters").addEventListener("click", hideFilters)
 
-})
+
+
+
+
+
+
+

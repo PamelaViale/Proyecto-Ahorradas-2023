@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+      src="https://kit.fontawesome.com/e0b1eca94c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Editar Operacion</title>
+</head>
+<body class="bg-gray-200 xl:flex flex-col items-center justify-center">
+
+    <nav class="bg-teal-500 h-24 flex justify-between items-center p-4 xl:w-screen">
+        <div class="flex items-center">
+          <i class="fas fa-wallet text-white text-4xl"></i>
+          <h1 class="text-white ml-2 text-4xl">AhorrADAs</h1>
+        </div>
+  
+        <ul class="hidden md:flex space-x-4 ">
+          <li>
+            <i class="fas fa-chart-line text-white"></i
+            ><a href="/index.html" class="text-white text-xl ml-2" id="balance-options">Balance</a>
+          </li>
+          <li>
+            <i class="fas fa-tag text-white"></i
+            ><a href="categoria.html" class="text-white text-xl ml-2" id="category-options">Categoría</a>
+          </li>
+          <li>
+            <i class="fas fa-chart-pie text-white"></i
+            ><a href="reportes.html" class="text-white text-xl ml-2" id="reports-option">Reportes</a>
+          </li>
+        </ul>
+  
+        <div class="md:hidden">
+          <input type="checkbox" id="menuToggle" class="hidden" />
+          <label for="menuToggle" class="cursor-pointer text-white">
+            <i class="fas fa-bars"></i>
+          </label>
+          <div
+            class="fixed top-0 left-0 bg-gray-800 w-full h-full opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out"
+            id="mobileMenu"
+          >
+            <div class="flex justify-end p-4">
+              <label for="menuToggle" class="text-white cursor-pointer">
+                <i class="fas fa-times"></i>
+              </label>
+            </div>
+            <div class="flex flex-col items-center">
+              <a href="#" class="block text-white py-2" id="balance">Balance</a>
+              <a href="#" class="block text-white py-2" id="category"
+                >Categoría</a
+              >
+              <a href="#" class="block text-white py-2" id="reports">Reportes</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Termina Nav -->
+
+<section class="bg-white mr-4 mt-12 ml-6 p-6 rounded lg:w-11/12 xl:w-6/12 pl-16 " >
+    <h1 class="text-4xl font-bold mb-12">Editar Operacion</h1>
+    <div class="">
+        <h2 class="mb-2 mt-5 font-bold" > Descripción</h2>
+        <input class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" type="text" name="Descripción" id="new-operation-description">
+    </div>
+    <div>
+        <h2 class="mb-2 mt-5 font-bold">Monto</h2>
+        <input class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" value="0" type="number" name="Monto" id="new-operation-amount">
+    </div>
+    <div>
+        <h2 class="mb-2 mt-5 font-bold">Tipo</h2>
+        <select class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" name="" id="new-operation-type">
+            <option value="" id="new-operation-expense">Gasto</option>
+            <option value="" id="new-operation-profit">Ganancia</option>
+        </select>
+    </div>
+    <div>
+        <h2 class="mb-2 mt-5 font-bold">Categoría</h2>
+        <select class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" name="" id="">
+            <option value="" id="new-operation-meal">Comida</option>
+            <option value="" id="new-operation-service">Servicios</option>
+            <option value="" id="new-operation-outings">Salida</option>
+            <option value="" id="new-operation-education">Educación</option>
+            <option value="" id="new-operation-transport">Transporte</option>
+            <option value="" id="new-operation-job">Trabajo</option>
+        </select>
+        
+    </div>
+<div>
+    <h2 class="mb-2 mt-5 font-bold">Fecha</h2>
+    <input class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" type="date" name="" id="new-operation-date">
+
+</div>
+<div class="flex justify-end mt-10 ">
+    <button class="bg-slate-100 hover:bg-slate-200 h-8 w-18 rounded p-4 flex items-center  mr-2" id="new-operation-cancel">Cancelar</button>
+    <a href="../index.html" class="bg-teal-500 hover:bg-teal-600 h-8 w-18 rounded p-4  flex items-center text-white text-center" id="new-operation-accept">Editar</a>
+   
+</div>
+   
+    
+
+
+
+</section>
+
+<script src="java-script/main.js"></script>
+</body>
+</html>
