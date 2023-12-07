@@ -1,148 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/e0b1eca94c.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Balance</title>
-  </head>
-  <body class="bg-gray-200">
-    <nav class="bg-teal-500 h-24 flex justify-between items-center p-4">
-      <div class="flex items-center">
-        <i class="fas fa-wallet text-white text-4xl"></i>
-        <h1 class="text-white ml-2 text-4xl">AhorrADAs</h1>
-      </div>
 
-      <ul class="hidden md:flex space-x-4 ">
-        <li>
-          <i class="fas fa-chart-line text-white"></i
-          ><a href="#" class="text-white text-xl ml-2" id="balance-options">Balance</a>
-        </li>
-        <li>
-          <i class="fas fa-tag text-white"></i
-          ><a href="index/categoria.html" class="text-white text-xl ml-2" id="category-options">Categoría</a>
-        </li>
-        <li>
-          <i class="fas fa-chart-pie text-white"></i
-          ><a href="index/reportes.html" class="text-white text-xl ml-2" id="reports-option">Reportes</a>
-        </li>
-      </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/e0b1eca94c.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Balance</title>
+</head>
 
-      <div class="md:hidden">
-        <input type="checkbox" id="menuToggle" class="hidden" />
-        <label for="menuToggle" class="cursor-pointer text-white">
-          <i class="fas fa-bars"></i>
-        </label>
-        <div
-          class="fixed top-0 left-0 bg-gray-800 w-full h-full opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out"
-          id="mobileMenu"
-        >
-          <div class="flex justify-end p-4">
-            <label for="menuToggle" class="text-white cursor-pointer">
-              <i class="fas fa-times"></i>
-            </label>
-          </div>
-          <div class="flex flex-col items-center">
-            <a href="#" class="block text-white py-2" id="balance">Balance</a>
-            <a href="#" class="block text-white py-2" id="category"
-              >Categoría</a
-            >
-            <a href="#" class="block text-white py-2" id="reports">Reportes</a>
-          </div>
+<body class="bg-gray-200">
+  <nav class="bg-teal-500 h-24 flex justify-between items-center p-4">
+    <div class="flex items-center">
+      <i class="fas fa-wallet text-white text-4xl"></i>
+      <h1 class="text-white ml-2 text-4xl">AhorrADAs</h1>
+    </div>
+
+    <ul class="hidden md:flex space-x-4 ">
+      <li>
+        <i class="fas fa-chart-line text-white"></i><a href="#" class="text-white text-xl ml-2"
+          id="balance-options">Balance</a>
+      </li>
+      <li>
+        <i class="fas fa-tag text-white"></i><a href="index/categoria.html" class="text-white text-xl ml-2"
+          id="category-options">Categoría</a>
+      </li>
+      <li>
+        <i class="fas fa-chart-pie text-white"></i><a href="index/reportes.html" class="text-white text-xl ml-2"
+          id="reports-option">Reportes</a>
+      </li>
+    </ul>
+
+    <div class="md:hidden">
+      <input type="checkbox" id="menuToggle" class="hidden" />
+      <label for="menuToggle" class="cursor-pointer text-white">
+        <i class="fas fa-bars"></i>
+      </label>
+      <div
+        class="fixed top-0 left-0 bg-gray-800 w-full h-full opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out"
+        id="mobileMenu">
+        <div class="flex justify-end p-4">
+          <label for="menuToggle" class="text-white cursor-pointer">
+            <i class="fas fa-times"></i>
+          </label>
+        </div>
+        <div class="flex flex-col items-center">
+          <a href="#" class="block text-white py-2" id="balance">Balance</a>
+          <a href="#" class="block text-white py-2" id="category">Categoría</a>
+          <a href="#" class="block text-white py-2" id="reports">Reportes</a>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- section  -->
-    <section class=" lg:flex place-content-center w-9/12 lg:ml-40">
+  <!-- section  -->
+  <section class=" lg:flex place-content-center w-9/12 lg:ml-40">
 
-      <div>
+    <div>
 
-        <!-- Balance -->
-        <div class="flex flex-col min-h-min bg-sky-500 mt-12 ml-10 w-72 p-4 rounded bg-white shadow-lg">
-          <div class="text-[28px] font-bold">Balance</div>
-        
-          <div class="flex justify-between mt-8 mb-4">
-            <div class="space-x-2 text-[24px]">Ganancias</div>
-            <div class="text-[18px] text-teal-600" id="Profits">+$0</div>
-          </div>
-          
-          <div class="flex justify-between mb-4">
-            <div class="space-x-2 text-[24px]">Gastos</div>
-            <div class="text-[18px] text-rose-600" id="expenses">-$0</div>
-          </div>
-          
-          <div class="flex justify-between items-center mb-4">
-            <div class="space-x-2 text-[24px]">Total</div>
-            <div class="text-[18px] font-bold" id="total">$0</div>
-          </div>
+      <!-- Balance -->
+      <div class="flex flex-col min-h-min bg-sky-500 mt-12 ml-10 w-72 p-4 rounded bg-white shadow-lg">
+        <div class="text-[28px] font-bold">Balance</div>
+
+        <div class="flex justify-between mt-8 mb-4">
+          <div class="space-x-2 text-[24px]">Ganancias</div>
+          <div class="text-[18px] text-teal-600" id="Profits">+$0</div>
         </div>
 
-        <!-- Filtros -->
-        <div class="flex flex-col min-h-min bg-sky-500 mt-8 ml-10 w-72 max-w-screen-sm p-4 rounded bg-white shadow-lg">
-            <div class="flex justify-between mb-4">
-                <div class="text-[28px] font-bold">Filtros</div>
-                <div id="hide-filters "><a href="" class="text-blue-500 hover:text-black">Ocultar Filtros</a></div>
-                <!-- <div id="hide-filters "><a href="" class="text-blue-500 hover:text-black">Mostrar Filtros</a></div> -->
-            </div>
-            <div>
-                <!-- Tipo -->
-                <div class="mb-4">
-                    <div class="font-bold">Tipo</div>
-                <select class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded mt-2" name="" id="input-type">
-                    <option value="" id="all-select">Todos</option>
-                    <option value="" id="expense-select">Gasto</option>
-                    <option value="" id="profit-select">Ganancia</option>
-                   
-                </select>
-                </div>
-                <!-- Categoria  -->
-                <div class="mb-4">
-                    <div class="font-bold">Categoria</div>
-                <select class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded mt-2" name="" id="category-select">
-                    <option value="" id="all-option-select">Todas</option>
-                    <option value="" id="food-option-select">Comida</option>
-                    <option value="" id="service-option-select">Servicios</option>
-                    <option value="" id="exits-option-select">Salidas</option>
-                    <option value="" id="education-option-select">Educación</option>
-                    <option value="" id="transport-options-select">Transporte</option>
-                    <option value="" id="work-option-select">Trabajo</option>
-                </select>
-                </div>
-            <!-- Desde -->
-                <div class="mb-4">
-                    <div class="font-bold h-10">Desde</div>
-                    <input class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" type="date" name="" id="date-input">
-
-                </div>
-            <!-- Ordenar por-->
-                <div class="mb-4">
-                    <div class="font-bold ">Ordenar por</div>
-                    <select class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded mt-2" name="" id="">
-                        <option value="" id="most-recent-select">Más reciente</option>
-                        <option value="" id="lest-recent-select">Menos reciente</option>
-                        <option value="" id="higher-amoun">Mayor Monto</option>
-                        <option value="" id="lower-amoun">Menor Monto</option>
-                        <option value="" id="alphabetical-orde-az">A/Z</option>
-                        <option value="" id="alphabetical-orde-za">Z/A</option>
-                    </select>
-                </div>
-                
-
-            </div>
+        <div class="flex justify-between mb-4">
+          <div class="space-x-2 text-[24px]">Gastos</div>
+          <div class="text-[18px] text-rose-600" id="expenses">-$0</div>
         </div>
 
+        <div class="flex justify-between items-center mb-4">
+          <div class="space-x-2 text-[24px]">Total</div>
+          <div class="text-[18px] font-bold" id="total">$0</div>
+        </div>
       </div>
 
+      <!-- Filtros -->
+      <div class="flex flex-col min-h-min bg-sky-500 mt-8 ml-10 w-72 max-w-screen-sm p-4 rounded bg-white shadow-lg">
+        <div class="flex justify-between mb-4">
+          <div class="text-[28px] font-bold">Filtros</div>
+          <div id="hideFilters"><a href="" class="text-blue-500 hover:text-black">Ocultar Filtros</a></div>
+          <!-- <div id="hide-filters "><a href="" class="text-blue-500 hover:text-black">Mostrar Filtros</a></div> -->
+        </div>
+        <div id="hidden-filter-type">
+          <!-- Tipo -->
+          <div class="mb-4">
+            <div class="font-bold">Tipo</div>
+            <select class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded mt-2" name="" id="input-type">
+              <option value="" id="all-select">Todos</option>
+              <option value="" id="expense-select">Gasto</option>
+              <option value="" id="profit-select">Ganancia</option>
 
+            </select>
+          </div>
+          <!-- Categoria  -->
+          <div class="mb-4" id="hidden-filter">
+            <div class="font-bold">Categoria</div>
+            <select class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded mt-2" name=""
+              id="category-select">
+              <option value="" id="all-option-select">Todas</option>
+              <option value="" id="food-option-select">Comida</option>
+              <option value="" id="service-option-select">Servicios</option>
+              <option value="" id="exits-option-select">Salidas</option>
+              <option value="" id="education-option-select">Educación</option>
+              <option value="" id="transport-options-select">Transporte</option>
+              <option value="" id="work-option-select">Trabajo</option>
+            </select>
+          </div>
+          <!-- Desde -->
+          <div class="mb-4" id="hidden-filter">
+            <div class="font-bold h-10">Desde</div>
+            <input class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" type="date" name=""
+              id="date-input">
+
+          </div>
+          <!-- Ordenar por-->
+          <div class="mb-4" id="hidden-filter">
+            <div class="font-bold ">Ordenar por</div>
+            <select class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded mt-2" name="" id="">
+              <option value="" id="most-recent-select">Más reciente</option>
+              <option value="" id="lest-recent-select">Menos reciente</option>
+              <option value="" id="higher-amoun">Mayor Monto</option>
+              <option value="" id="lower-amoun">Menor Monto</option>
+              <option value="" id="alphabetical-orde-az">A/Z</option>
+              <option value="" id="alphabetical-orde-za">Z/A</option>
+            </select>
+          </div>
+
+
+        </div>
       </div>
-      <!-- Operaciones -->
-    
-      <div class="flex flex-col shadow-lg w-72 mt-12 ml-10 p-4 rounded bg-white lg:flex h-2/6 pb-60 lg:w-full ">
+
+    </div>
+
+
+    </div>
+    <!-- Operaciones -->
+
+    <!-- <div class="flex flex-col shadow-lg w-72 mt-12 ml-10 p-4 rounded bg-white lg:flex h-2/6 pb-60 lg:w-full ">
        <div class="flex flex-wrap lg:flex lg:items-center lg:justify-between space-x-10">
         <div class="text-[28px] font-bold mb-4 lg:mb-0">Operaciones</div>
         <div class="bg-teal-500 hover:bg-teal-600 h-8 w-40 rounded p-2 flex items-center text-white" id="new-operation">
@@ -155,10 +153,49 @@
                       <h3 class="font-bold mb-2 lg:text-3xl">Sin resultados</h3>
             <p>Cambia los filtros o agrega operaciones</p>
                   
+        </div> -->
+
+
+    <div class="flex flex-col shadow-lg w-72 mt-12 ml-10 p-4 rounded bg-white lg:flex h-2/6 pb-60 lg:w-full ">
+      <div class="flex flex-wrap lg:flex lg:items-center lg:justify-between space-x-10">
+        <div class="text-[28px] font-bold mb-4 lg:mb-0">Operaciones</div>
+        <div class="bg-teal-500 hover:bg-teal-600 h-8 w-40 rounded p-2 flex items-center text-white" id="new-operation">
+          <a href="index/nuevaoperacion.html" id="new-operation-add">+Nueva Operación</a>
+        </div>
+      </div>
+ <!-- Operaciones -->
+      <div class=" " id="hidden-operation-mode">
+        <div class="font-bold  mt-4 text-[18px]">
+          <table class=" w-full">
+            <tr>
+            <th>Descripción</th>
+            <th>Categoría</th>
+            <th>Fecha</th>
+            <th>Monto</th>
+            <th>Acciones</th>
+          </tr>
+          </table>
+
         </div>
 
+        <div>
+          <div class="font-bold  mt-4 text-[18px]">
+            <ul class="flex justify-between">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+
+
+
+        </div>
       </div>
-      
-    </section>
-  </body>
+
+  </section>
+  <script src="java-script/main.js"></script>
+</body>
+
 </html>
