@@ -52,7 +52,7 @@
       </div>
     </div>
   </nav>
-<!-- termina nav
+  <!-- termina nav
 
 -->
   <!-- section  -->
@@ -90,11 +90,11 @@
         <div id="hidden-filter-type">
           <!-- Tipo -->
           <div class="mb-4">
-            <div class="font-bold">Tipo</div>
+            <label class="font-bold">Tipo</label>
             <select class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded mt-2" name="" id="input-type">
-              <option value="" id="all-select">Todos</option>
-              <option value="" id="expense-select">Gasto</option>
-              <option value="" id="profit-select">Ganancia</option>
+              <option value="Todos" id="all-select">Todos</option>
+              <option value="Gasto" id="expense-select">Gasto</option>
+              <option value="Ganancia" id="profit-select">Ganancia</option>
 
             </select>
           </div>
@@ -103,32 +103,32 @@
             <div class="font-bold">Categoria</div>
             <select class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded mt-2" name=""
               id="category-select">
-              <option value="" id="all-option-select">Todas</option>
-              <option value="" id="food-option-select">Comida</option>
-              <option value="" id="service-option-select">Servicios</option>
-              <option value="" id="exits-option-select">Salidas</option>
-              <option value="" id="education-option-select">Educación</option>
-              <option value="" id="transport-options-select">Transporte</option>
-              <option value="" id="work-option-select">Trabajo</option>
+              <option value="Todas" id="all-option-select">Todas</option>
+              <option value="Comida" id="food-option-select">Comida</option>
+              <option value="Servicios" id="service-option-select">Servicios</option>
+              <option value="Salidas" id="exits-option-select">Salidas</option>
+              <option value="Educacion" id="education-option-select">Educación</option>
+              <option value="Transporte" id="transport-options-select">Transporte</option>
+              <option value="Trabajo" id="work-option-select">Trabajo</option>
             </select>
           </div>
           <!-- Desde -->
           <div class="mb-4" id="hidden-filter">
-            <div class="font-bold h-10">Desde</div>
+            <label class="font-bold h-10">Desde</label>
             <input class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" type="date" name=""
               id="date-input">
 
           </div>
           <!-- Ordenar por-->
           <div class="mb-4" id="hidden-filter">
-            <div class="font-bold ">Ordenar por</div>
+            <label class="font-bold ">Ordenar por</label>
             <select class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded mt-2" name="" id="">
-              <option value="" id="most-recent-select">Más reciente</option>
-              <option value="" id="lest-recent-select">Menos reciente</option>
-              <option value="" id="higher-amoun">Mayor Monto</option>
-              <option value="" id="lower-amoun">Menor Monto</option>
-              <option value="" id="alphabetical-orde-az">A/Z</option>
-              <option value="" id="alphabetical-orde-za">Z/A</option>
+              <option value="Mas reciente" id="most-recent-select">Más reciente</option>
+              <option value="Menos reciente" id="lest-recent-select">Menos reciente</option>
+              <option value="Mayor Monto" id="higher-amoun">Mayor Monto</option>
+              <option value="Menor Monto" id="lower-amoun">Menor Monto</option>
+              <option value="A/Z" id="alphabetical-orde-az">A/Z</option>
+              <option value="Z/A" id="alphabetical-orde-za">Z/A</option>
             </select>
           </div>
 
@@ -140,66 +140,55 @@
 
 
     </div>
-    <!-- Operaciones -->
+    <!-- Operaciones I-->
 
-    <!-- <div class="flex flex-col shadow-lg w-72 mt-12 ml-10 p-4 rounded bg-white lg:flex h-2/6 pb-60 lg:w-full ">
-       <div class="flex flex-wrap lg:flex lg:items-center lg:justify-between space-x-10">
-        <div class="text-[28px] font-bold mb-4 lg:mb-0">Operaciones</div>
-        <div class="bg-teal-500 hover:bg-teal-600 h-8 w-40 rounded p-2 flex items-center text-white" id="new-operation">
-          <a href="index/nuevaoperacion.html" id="new-operation-add">+Nueva Operación</a>
-        </div>
-      </div>
-
-        <div class="flex flex-col items-center text-center justify-center " id="hidden-operation">
-          <img class="mb-6 mt-12 lg:w-4/12 pt-16 flex place-content-center"  src="assets/wallet.jpg" alt="wallet-img">
-                      <h3 class="font-bold mb-2 lg:text-3xl">Sin resultados</h3>
-            <p>Cambia los filtros o agrega operaciones</p>
-                  
-        </div> -->
-
-
-    <div class="flex flex-col shadow-lg w-72 mt-12 ml-10 p-4 rounded bg-white lg:flex h-2/6 pb-60 lg:w-full ">
+    <div class="flex flex-col shadow-lg w-72 mt-12 ml-10 p-4 rounded bg-white lg:flex h-2/6 pb-60 lg:w-full "
+      id="operation-img">
       <div class="flex flex-wrap lg:flex lg:items-center lg:justify-between space-x-10">
         <div class="text-[28px] font-bold mb-4 lg:mb-0">Operaciones</div>
         <div class="bg-teal-500 hover:bg-teal-600 h-8 w-40 rounded p-2 flex items-center text-white" id="new-operation">
           <a href="index/nuevaoperacion.html" id="new-operation-add">+Nueva Operación</a>
         </div>
       </div>
- <!-- Operaciones -->
-      <div class=" " id="hidden-operation-mode">
-        <div class="font-bold  mt-4 text-[18px]">
-          <table class=" w-full">
-            <tr>
+
+      <div class="flex flex-col items-center text-center justify-center " id="hidden-operation">
+        <img class="mb-6 mt-12 lg:w-4/12 pt-16 flex place-content-center" src="assets/wallet.jpg" alt="wallet-img">
+        <h3 class="font-bold mb-2 lg:text-3xl">Sin resultados</h3>
+        <p>Cambia los filtros o agrega operaciones</p>
+
+      </div>
+    </div>
+    
+    <!-- Operaciones II -->
+    <div class="flex flex-col shadow-lg w-72 mt-12 ml-10 p-4 rounded bg-white lg:flex h-2/6 pb-60 lg:w-full sm:hidden md:hidden lg:hidden"
+      id="operation-add">
+      <div class="flex flex-wrap lg:flex lg:items-center lg:justify-between space-x-10">
+        <div class="text-[28px] font-bold mb-4 lg:mb-0">Operaciones</div>
+        <div class="bg-teal-500 hover:bg-teal-600 h-8 w-40 rounded p-2 flex items-center text-white" id="new-operation">
+          <a href="index/nuevaoperacion.html" id="new-operation-add">+Nueva Operación</a>
+        </div>
+      </div>
+
+
+      <div class="font-bold mt-4 text-[18px]" id="hidden-operation-mode">
+        <table class="w-full" id="table-operaciones">
+          <thead>
             <th>Descripción</th>
             <th>Categoría</th>
             <th>Fecha</th>
             <th>Monto</th>
             <th>Acciones</th>
-          </tr>
-
+          </thead>
           <tbody id="table">
 
+
           </tbody>
-          </table>
-
-
-        </div>
-
-        <div>
-          <div class="font-bold  mt-4 text-[18px]">
-            <ul class="flex justify-between">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-          </div>
-
-
-
-        </div>
+        </table>
       </div>
+    </div>
+
+
+
 
   </section>
   <script src="java-script/main.js"></script>
