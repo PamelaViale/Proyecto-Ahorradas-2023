@@ -3,6 +3,12 @@
 const $ = (selector) => document.querySelector(selector)
 const $$ = (selector) => document.querySelectorAll(selector)
 
+// ------------------------------------------------------------------
+
+
+// id dinamico utilities
+const idGeneration = () => self.crypto.randomUUID()
+
 // //------------------------------------------------------------------
 // //Funcion ocultar filtros - OK
 const hideFilters = (event) => {
@@ -17,33 +23,13 @@ const hideFilters = (event) => {
 
 //-------------------------------------------------------------------------
 
-
-// Datos de ejemplo
-const infoInput = [
-    {
-        Id: 1,
-        descripcion: 'Sueldo',  // Añadí comillas simples para que 'Sueldo' sea una cadena de texto
-        monto: 200,
-        tipo: 'ganancia',  // Añadí comillas simples para que 'ganancia' sea una cadena de texto
-        categoria: 'trabajo',  // Añadí comillas simples para que 'trabajo' sea una cadena de texto
-        fecha: '11/12/2023',  // Añadí comillas simples para que '11/12/2023' sea una cadena de texto
-    },
-    {
-        Id: 2,
-        descripcion: 'almuerzo',  // Añadí comillas simples para que 'almuerzo' sea una cadena de texto
-        monto: 200,
-        tipo: 'gasto',  // Añadí comillas simples para que 'gasto' sea una cadena de texto
-        categoria: 'comida',  // Añadí comillas simples para que 'comida' sea una cadena de texto
-        fecha: '11/12/2023',  // Añadí comillas simples para que '11/12/2023' sea una cadena de texto
-    },
-];
-
+const dataInput = []
 
 // Función para renderizar los datos en la tabla
-const renderInput = (dataInputs) => {
-    // Itero sobre los datos de entrada y agrego filas a la tabla
+const renderInput = () => {
+ 
     for (const dataInput of dataInputs) {
-        // Corregí los nombres de las propiedades para que coincidan con los datos de entrada
+        
         $("#table").innerHTML += `
             <tr>
                 <td>${dataInput.descripcion}</td>
@@ -53,25 +39,45 @@ const renderInput = (dataInputs) => {
                 <td>Editar y eliminar btn</td>
             </tr>
         `;
-        // agregar los btn de eliminar y editar
+        //agregar los btn de eliminar y editar
     }
 };
 
 
-renderInput(infoInput);
+renderInput();
+
+
+
+
+const saveData = () =>{
+//guardo el valor de los input
+return {
+        Id: idGeneration(),
+        descripcion: $("#new-operation-description").value,  
+        monto: $("#new-operation-amount").value,
+        tipo: $("#new-operation-type").value,  
+        categoria: $("#new-operation-category").value,  
+        fecha: $("#new-operation-date").value,
+}
+
+}
 
 //------------------------------------------
 
 //Funcion para cambiar de pantalla de la img de operaciones al cuadro:
 //PREGUNTAR
 
+// const initializeApp = () =>{
+//     $("#new-operation-accept").addEventListener("click", () => {
+    
+//         $("#operation-add").classList.remove("hidden")
+//         $("#operation-img").classList.add("hidden")
+//       })
 
-$("#new-operation-accept").addEventListener("click", () => {
-    $("#operation-add").classList.remove("hidden")
-    $("#operation-img").classList.add("hidden")
-  })
+// }
 
 
+// window.addEventListener("load",initializeApp )
 
 
 

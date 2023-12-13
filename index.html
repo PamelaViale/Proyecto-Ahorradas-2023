@@ -6,10 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://kit.fontawesome.com/e0b1eca94c.js" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <title>Balance</title>
+  
+  <title></title>
 </head>
 
 <body class="bg-gray-200">
+
+  <!-- Nav -->
   <nav class="bg-teal-500 h-24 flex justify-between items-center p-4">
     <div class="flex items-center">
       <i class="fas fa-wallet text-white text-4xl"></i>
@@ -55,7 +58,7 @@
   <!-- termina nav
 
 -->
-  <!-- section  -->
+  <!-- section Balance -->
   <section class=" lg:flex place-content-center w-9/12 lg:ml-40">
 
     <div>
@@ -165,7 +168,7 @@
       <div class="flex flex-wrap lg:flex lg:items-center lg:justify-between space-x-10">
         <div class="text-[28px] font-bold mb-4 lg:mb-0">Operaciones</div>
         <div class="bg-teal-500 hover:bg-teal-600 h-8 w-40 rounded p-2 flex items-center text-white" id="new-operation">
-          <a href="index/nuevaoperacion.html" id="new-operation-add">+Nueva Operación</a>
+          <a href="index/nuevaoperacion.html" id="new-operation-add-op">+Nueva Operación</a>
         </div>
       </div>
 
@@ -191,6 +194,258 @@
 
 
   </section>
+<!-- Seccion Categoria -->
+
+<section class="bg-white mr-2 mt-12 ml-2 p-6 rounded lg:w-11/12 xl:w-6/12 hidden">
+  <h1 class="text-4xl font-bold mb-12">Categoría</h1>
+  <h2 class="font-bold">Nombre</h2>
+  <div class="flex">
+      <input type="text" class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" type="text" name="Descripción" id="new-operation-description" name="" id="">
+      <button class="bg-teal-500 hover:bg-teal-600 h-10 w-18 rounded p-4  flex items-center text-white text-center ml-2" id="add-category">Agregar</button>
+  </div>
+  
+  <div class="flex justify-between mt-16">
+      <h2 class="bg-green-100 text-green-600 p-2 h-10 flex items-center ext-green-800 rounded" id="meal-category" >Comida</h2>
+      <div>
+        <a href="" class="edit-category text-blue-500 hover:text-black mr-2" >Editar</a>
+        <a href="" class="edit-category text-blue-500 hover:text-black">Eliminar</a>
+  
+      </div>
+      
+  </div>
+  <div class="flex justify-between mt-8">
+      <h2 class="bg-green-100 text-green-600 p-2 h-10 flex items-center ext-green-800 rounded" id="service-category">Servicios</h2>
+      <div >
+        <a href="" class="edit-category text-blue-500 hover:text-black mr-2" >Editar</a>
+      <a href="" class="edit-category text-blue-500 hover:text-black">Eliminar</a>
+      </div>
+     
+  </div>
+  <div class="flex justify-between mt-8">
+      <h2 class="bg-green-100 text-green-600 p-2 h-10 flex items-center ext-green-800 rounded" id="education-category">Educación</h2>
+      <div>
+        <a href="" class="edit-category text-blue-500 hover:text-black mr-2">Editar</a>
+      <a href="" class="edit-category text-blue-500 hover:text-black">Eliminar</a>
+      </div>
+      
+  </div>
+  <div class="flex justify-between mt-8">
+      <h2 class="bg-green-100 text-green-600 p-2 h-10 flex items-center ext-green-800 rounded" id="transport-category">Transporte</h2>
+      <div>
+        <a href="" class="edit-category text-blue-500 hover:text-black mr-2">Editar</a>
+      <a href="" class="edit-category text-blue-500 hover:text-black">Eliminar</a>
+      </div>
+      
+  </div>
+  <div class="flex justify-between mt-8">
+      <h2 class="bg-green-100 text-green-600 p-2 h-10 flex items-center ext-green-800 rounded" id="job-category">Trabajo</h2>
+      <div>
+        <a href="" class="edit-category text-blue-500 hover:text-black mr-2" >Editar</a>
+      <a href="" class="edit-category text-blue-500 hover:text-black" >Eliminar</a>
+      </div>
+  </div>
+  </section>
+
+<!-- Seccion Reportes -->
+  <div class="bg-white mr-4 mt-12 ml-6 p-6 rounded lg:w-11/12 xl:w-6/12 hidden">
+      <div><h2 class="text-4xl font-bold mb-12">Reportes</h2></div>
+      <section>
+        <div class="ml-4">
+        <div class="text-2xl mb-10 font-bold">Resumen</div>
+        
+        <div class="flex justify-between mb-4">
+          <div><h2 class="flex flex-wrap w-28 lg:w-full">Categoría con mayor Ganancia</h2></div>
+          <div class="bg-green-100 text-green-600 p-2 h-10 flex items-center ext-green-800 rounded" id="category-work">Trabajo</div>
+          <div class="text-green-500" id="add-profit-work">+$0</div>
+        </div>
+
+        <div class="flex justify-between mb-4">
+          <div><h2 class="flex flex-wrap w-28 lg:w-full">Categoría con mayor gasto</h2></div>
+          <div class="bg-green-100 text-green-600 p-2 h-10 flex items-center ext-green-800 rounded mr-8 lg:mr-2" id="add-food">Comida </div>
+          <div class="text-red-500" id="add-profit-food">-$0</div>
+        </div>
+
+        <div class="flex justify-between mb-4">
+          <div><h2 class="flex flex-wrap w-28 lg:w-full">Categoría con mayor balance</h2></div>
+          <div class="bg-green-100 text-green-600 p-2 h-10 flex items-center round ext-green-800 rounded" id="add-another-work">Trabajo</div>
+          <div class="text-green-500" id="add-profit-to-work">$0</div>
+        </div>
+
+        <div class="flex justify-between mb-4">
+          <div><h2 class="flex flex-wrap w-28 lg:w-full">Mes con mayor ganancia</h2></div>
+          <div class="lg:ml-6" id="add-profit-date" >2023/11/20</div>
+          <div class="text-green-500" id="add-profit-amount">$0</div>
+        </div>
+
+        <div class="flex justify-between mb-4">
+          <div><h2 class="flex flex-wrap w-28 lg:w-full">Mes con mayor gasto</h2></div>
+          <div class="mr-8 lg:ml-12" id="add-expense-date">2023/11/04</div>
+          <div class="text-green-500" id="add-expense-amount">-$0</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="ml-4">
+        <div class="text-2xl mb-10 mt-10 font-bold">Totales por categorías</div>
+
+        
+        <div class="flex justify-between">
+          <div class="flex">Categoria</div>
+          <div class="flex">Ganancias</div>
+          <div class="flex">Gastos</div>
+          <div class="flex">Balance</div>
+        </div>
+
+        <div class="flex justify-between mb-4 mt-4 text-center">
+          <div class="flex text-center">Comida</div>
+          <div class="text-green-500" id="food-profit">+$0</div>
+          <div class="text-red-500" id="food-expense">-$0</div>
+          <div class="" id="food-balance">$-0</div>
+        </div>
+
+        <div class="flex justify-between mb-4 mt-4 text-center ">
+          <div class="flex text-center">Trabajo</div>
+          <div class="text-green-500" id="work-profit">+$0</div>
+          <div class="text-red-500" id="work-expense">-$0</div>
+          <div class="" id="work-balance">$20000</div>
+        </div>
+      </section>
+
+
+
+      <section>
+        <div class="ml-4">
+        <div class="text-2xl mb-10 mt-10 font-bold">Totales por mes</div>
+        <div class="flex justify-between mb-4">
+            <div class="flex">Mes</div>
+            <div class="flex">Ganancias</div>
+            <div class="flex">Gastos</div>
+            <div class="flex">Balance</div>
+          </div>
+
+          <div class="flex justify-between">
+            <div class="flex text-center">11/2023</div>
+            <div class="text-green-500">+$20000</div>
+            <div class="text-red-500">-$7</div>
+            <div class="">$19993</div>
+          </div>
+        </div>
+    </div>
+</div>
+      </section>
+    </div>
+
+
+    <section class="bg-white h-3/4 mr-4 mt-12 ml-6 p-6 rounded lg:w-11/12 h-2/4 xl:w-7/12 hidden">
+      <div class="text-4xl font-bold mb-12"> Reportes</div>
+      <div class="flex flex-col justify-center items-center">
+      <div class="mt-15 mb-10 lg:w-4/6 "><img  src="../assets/charter.JPG" alt="charter-report"></div>
+      <div class="flex flex-col justify-center items-center text-lg text-center">
+        <h4 class="text-3xl flex">Operaciones insuficientes</h4>
+        <p>Prueba agregando más operaciones</p>
+      </div>
+      </div>
+    </section>
+
+
+  <!-- Section Nueva Operacion  -->
+  <section class="bg-white mr-4 mt-12 ml-6 p-6 rounded lg:w-11/12 xl:w-6/12 pl-16 hidden" >
+    <h1 class="text-4xl font-bold mb-12">Nueva Operación</h1>
+    <div class="">
+        <label class="mb-2 mt-5 font-bold" > Descripción</label>
+        <input class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" type="text" name="Descripción" id="new-operation-description">
+    </div>
+    <div class="flex flex-col">
+        <label class="mb-2 mt-5 font-bold">Monto</label>
+        <input class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" value="0" type="number" name="Monto" id="new-operation-amount">
+    </div>
+    <div>
+        <h2 class="mb-2 mt-5 font-bold">Tipo</h2>
+        <select class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" name="" id="new-operation-type">
+            <option value="Gasto" id="new-operation-expense">Gasto</option>
+            <option value="Ganancia" id="new-operation-profit">Ganancia</option>
+        </select>
+    </div>
+    <div>
+        <h2 class="mb-2 mt-5 font-bold">Categoría</h2>
+        <select class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" name="" id="new-operation-category">
+            <option value="Comida" id="new-operation-meal">Comida</option>
+            <option value="Servicios" id="new-operation-service">Servicios</option>
+            <option value="Salida" id="new-operation-outings">Salida</option>
+            <option value="Educacion" id="new-operation-education">Educación</option>
+            <option value="Transporte" id="new-operation-transport">Transporte</option>
+            <option value="Trabajo" id="new-operation-job">Trabajo</option>
+        </select>
+        
+    </div>
+<div class="flex flex-col">
+    <label class="mb-2 mt-5 font-bold">Fecha</label>
+    <input class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" type="date" name="" id="new-operation-date">
+
+</div>
+<div class="flex justify-end mt-10 ">
+    <button class="bg-slate-100 hover:bg-slate-200 h-8 w-18 rounded p-4 flex items-center  mr-2" id="new-operation-cancel">Cancelar</button>
+    <a href="../index.html" class="bg-teal-500 hover:bg-teal-600 h-8 w-18 rounded p-4  flex items-center text-white text-center" id="new-operation-accept">Agregar</a>
+   
+</div>
+   
+    
+
+
+
+</section>
+
+<!-- Section Editar Operación -->
+<section class="bg-white mr-4 mt-12 ml-6 p-6 rounded lg:w-11/12 xl:w-6/12 pl-16 hidden " >
+  <h1 class="text-4xl font-bold mb-12">Editar Operacion</h1>
+  <div class="">
+      <label class="mb-2 mt-5 font-bold" > Descripción</label>
+      <input class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" type="text" name="Descripción" id="new-operation-description">
+  </div>
+  <div>
+      <label class="mb-2 mt-5 font-bold">Monto</label>
+      <input class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" value="0" type="number" name="Monto" id="new-operation-amount">
+  </div>
+  <div>
+      <h2 class="mb-2 mt-5 font-bold">Tipo</h2>
+      <select class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" name="" id="new-operation-type">
+          <option value="Gasto" id="new-operation-expense">Gasto</option>
+          <option value="Ganancia" id="new-operation-profit">Ganancia</option>
+      </select>
+  </div>
+  <div>
+      <h2 class="mb-2 mt-5 font-bold">Categoría</h2>
+      <select class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" name="" id="">
+          <option value="Comida" id="new-operation-meal">Comida</option>
+          <option value="Servicios" id="new-operation-service">Servicios</option>
+          <option value="Salida" id="new-operation-outings">Salida</option>
+          <option value="Educacion" id="new-operation-education">Educación</option>
+          <option value="Transporte" id="new-operation-transport">Transporte</option>
+          <option value="Trabajo" id="new-operation-job">Trabajo</option>
+      </select>
+      
+  </div>
+<div>
+  <label class="mb-2 mt-5 font-bold">Fecha</label>
+  <input class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" type="date" name="" id="new-operation-date">
+
+</div>
+<div class="flex justify-end mt-10 ">
+  <button class="bg-slate-100 hover:bg-slate-200 h-8 w-18 rounded p-4 flex items-center  mr-2" id="new-operation-cancel">Cancelar</button>
+  <a href="../index.html" class="bg-teal-500 hover:bg-teal-600 h-8 w-18 rounded p-4  flex items-center text-white text-center" id="new-operation-accept">Editar</a>
+ 
+</div>
+ 
+  
+
+
+
+</section>
+
+
+
+
+
   <script src="java-script/main.js"></script>
 </body>
 
