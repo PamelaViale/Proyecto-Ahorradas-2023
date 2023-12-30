@@ -10,7 +10,7 @@
   <title></title>
 </head>
 
-<body class="bg-gray-200">
+<body class="bg-gray-200 w-full">
 
   <!-- Nav -->
   <nav class="bg-teal-500 h-24 flex justify-between items-center p-4">
@@ -170,28 +170,23 @@
       <div class="flex flex-wrap lg:flex lg:items-center lg:justify-between space-x-10">
         <div class="text-[28px] font-bold mb-4 lg:mb-0">Operaciones</div>
         <div class="bg-teal-500 hover:bg-teal-600 h-8 w-40 rounded p-2 flex items-center text-white" id="new-operation">
-          <a href="#" id="new-operation-add-op">+Nueva Operación</a>
+          <a href="#" id="new-operation-add-opp">+Nueva Operación</a>
         </div>
       </div>
 
-
-      <div class="font-bold mt-4 text-[18px]" id="hidden-operation-mode">
-        <table class="w-full" id="table-operaciones">
+   
+        <table class="font-bold mt-4 text-[18px]" id="table-operaciones">
           <thead>
-            <tr>
             <th>Descripción</th>
             <th>Categoría</th>
             <th>Fecha</th>
             <th>Monto</th>
             <th>Acciones</th>
-          </tr>
           </thead>
           <tbody id="table">
-
-
           </tbody>
         </table>
-      </div>
+      
     </div>
 
 
@@ -199,8 +194,9 @@
 
   </section>
 <!-- Seccion Categoria -->
-<!--  -->
-<section class="bg-white mr-2 mt-12 ml-2 p-6 rounded lg:ml-40  lg:w-11/12 xl:w-6/12 hidden" id="section-category">
+
+<section class="lg: w-full flex justify-center" >
+  <div class="bg-white mr-2 mt-12 ml-2 p-6 rounded  lg:w-2/4 hidden" id="section-category">
     <h1 class="text-4xl font-bold mb-12">Categoría</h1>
   <h2 class="font-bold">Nombre</h2>
   <div class="flex">
@@ -224,7 +220,7 @@
       <a href="#" class="edit-category text-blue-500 hover:text-black">Eliminar</a>
       </div>
      
-  </div>
+ </div>
   <div class="flex justify-between mt-8">
       <h2 class="bg-green-100 text-green-600 p-2 h-10 flex items-center ext-green-800 rounded" id="education-category">Educación</h2>
       <div>
@@ -248,9 +244,12 @@
       <a href="#" class="edit-category text-blue-500 hover:text-black" >Eliminar</a>
       </div>
   </div>
+</div>
   </section>
 
 <!-- Seccion Reportes -->
+<section class="lg: w-full flex justify-center">
+
   <div class="bg-white mr-4 mt-12 ml-6 p-6 rounded lg:flex flex-col justify-center lg:w-11/12 xl:w-6/12 hidden lg:hidden" id="section-reportes">
       
     <div><h2 class="text-4xl font-bold mb-12">Reportes</h2></div>
@@ -340,7 +339,7 @@
       </section>
     </div>
 
-
+</div>
     <section class="bg-white h-3/4 mr-4 mt-12 ml-6 p-6 rounded lg:w-11/12 h-2/4 xl:w-7/12 hidden">
       <div class="text-4xl font-bold mb-12"> Reportes</div>
       <div class="flex flex-col justify-center items-center">
@@ -352,13 +351,14 @@
       </div>
     </section>
 
-
+  </section>
   <!-- Section Nueva Operacion  -->
-  <section class="bg-white mr-4 mt-12 ml-6 p-6 rounded lg:w-11/12 xl:w-6/12 pl-16 hidden lg:hidden " id="new-operation-appear" >
+  <section class="lg: w-full flex justify-center">
+<div class="bg-white mr-4 mt-12 ml-6 p-6 rounded lg:w-11/12 xl:w-6/12 pl-16 hidden lg:hidden " id="new-operation-appear">
     <h1 class="text-4xl font-bold mb-12">Nueva Operación</h1>
     <div class="">
         <label class="mb-2 mt-5 font-bold" > Descripción</label>
-        <input class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" type="text" name="Descripción" id="new-operation-description">
+        <input class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" type="text" name="Descripción" id="new-operation-description-op">
     </div>
     <div class="flex flex-col">
         <label class="mb-2 mt-5 font-bold">Monto</label>
@@ -391,61 +391,15 @@
 <div class="flex justify-end mt-10 ">
     <button class="bg-slate-100 hover:bg-slate-200 h-8 w-18 rounded p-4 flex items-center  mr-2" id="new-operation-cancel">Cancelar</button>
     <a href="#" class="bg-teal-500 hover:bg-teal-600 h-8 w-18 rounded p-4  flex items-center text-white text-center" id="new-operation-accept">Agregar</a>
-   
+    <a href="" class="bg-teal-500 hover:bg-teal-600 h-8 w-18 rounded p-4  flex items-center text-white text-center hidden" id="new-operation-edit">Editar</a>
 </div>
    
     
-
+</div>
 
 
 </section>
 
-<!-- Section Editar Operación -->
-<section class="bg-white mr-4 mt-12 ml-6 p-6 rounded lg:w-11/12 xl:w-6/12 pl-16 hidden lg:hidden " >
-  <h1 class="text-4xl font-bold mb-12">Editar Operacion</h1>
-  <div class="">
-      <label class="mb-2 mt-5 font-bold" > Descripción</label>
-      <input class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" type="text" name="Descripción" id="new-operation-description">
-  </div>
-  <div>
-      <label class="mb-2 mt-5 font-bold">Monto</label>
-      <input class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" value="0" type="number" name="Monto" id="new-operation-amount">
-  </div>
-  <div>
-      <h2 class="mb-2 mt-5 font-bold">Tipo</h2>
-      <select class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" name="" id="new-operation-type">
-          <option value="Gasto" id="new-operation-expense">Gasto</option>
-          <option value="Ganancia" id="new-operation-profit">Ganancia</option>
-      </select>
-  </div>
-  <div>
-      <h2 class="mb-2 mt-5 font-bold">Categoría</h2>
-      <select class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" name="" id="">
-          <option value="Comida" id="new-operation-meal">Comida</option>
-          <option value="Servicios" id="new-operation-service">Servicios</option>
-          <option value="Salida" id="new-operation-outings">Salida</option>
-          <option value="Educacion" id="new-operation-education">Educación</option>
-          <option value="Transporte" id="new-operation-transport">Transporte</option>
-          <option value="Trabajo" id="new-operation-job">Trabajo</option>
-      </select>
-      
-  </div>
-<div>
-  <label class="mb-2 mt-5 font-bold">Fecha</label>
-  <input class="w-full max-w-screen-sm h-10 border border-gray-300 p-2 rounded" type="date" name="" id="new-operation-date">
-
-</div>
-<div class="flex justify-end mt-10 ">
-  <button class="bg-slate-100 hover:bg-slate-200 h-8 w-18 rounded p-4 flex items-center  mr-2" id="new-operation-cancel">Cancelar</button>
-  <a href="" class="bg-teal-500 hover:bg-teal-600 h-8 w-18 rounded p-4  flex items-center text-white text-center" id="new-operation-accept">Editar</a>
- 
-</div>
- 
- <!-- puedo agregar botones de editar y agregar y alternar en formularios para ahicar código -->
-
-
-
-</section>
 
 
 

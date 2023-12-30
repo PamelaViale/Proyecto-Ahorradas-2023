@@ -1,130 +1,158 @@
-//Utilities
 
-const $ = (selector) => document.querySelector(selector)
-const $$ = (selector) => document.querySelectorAll(selector)
-
-// id dinamico utilities
-const idGeneration = () => self.crypto.randomUUID([])
-
-//Inicializo LocalStorage
-const getData = (key) => JSON.parse(localStorage.getItem(key))
-const setData = (key, data) => localStorage.setItem(key,JSON.stringify(data))
-setData("categories", [])
-
-//para ejecutarlo llamo a la funcion y le paso los parametros.
-
-const allDates = getData("input") || []
-
-// // //----------------------------------------------------
-// // //Funcion ocultar filtros -FUNCIONA OK
+// Utilities
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => document.querySelectorAll(selector);
 
 
-const hideFilters = (event) => {
-    event.preventDefault()
-    const hiddenFilterType = $("#hidden-filter-type")
-    hiddenFilterType.style.display = hiddenFilterType.style.display === "none" ? "block" : "none"
+// id aleatorio
+const idGeneration = () => self.crypto.randomUUID([]);
+
+//local storage obtener y enviar datos
+const getData = (key) => JSON.parse(localStorage.getItem(key));
+const setData = (key, data) => localStorage.setItem(key, JSON.stringify(data));
+setData("categories", []);
+
+//traingo y guardo info del LS o me devielve un array
+const allDates = getData("input") || [];
+
+// mostrar elementos dom
+const showElement = (selectors) => {
+  for (const selector of selectors) {
+    $(selector).classList.remove("hidden", "lg:hidden");
   }
+};
+// esconder elementos dom
+const hideElement = (selectors) => {
+  for (const selector of selectors) {
+    $(selector).classList.add("hidden", "lg:hidden");
+  }
+};
 
-  $("#hideFilters").addEventListener("click", hideFilters)
+//esconder input de los filtros OK
+const hideFilters = (event) => {
+  event.preventDefault();
+  const hiddenFilterType = $("#hidden-filter-type");
+  hiddenFilterType.style.display =
+    hiddenFilterType.style.display === "none" ? "block" : "none";
+};
 
+$("#hideFilters").addEventListener("click", hideFilters);
 
+// Events
+const initializeApp = () => {
+  setData("input", allDates);
+  renderInput();
+// nav categoria veo categoria ok
+  $("#category-options").addEventListener("click", (e) => {
+    e.preventDefault();   
+    showElement(["#section-category"]);
+    hideElement(["#section-balance", "#section-reportes"]);
+  });
 
-// //-------------------------------------------------------------------------
-// 
-// //Events-----------------
+  //nav reportes veo reportes ok
+  $("#reports-option").addEventListener("click", (e) => {
+    e.preventDefault();
+    showElement(["#section-reportes"]);
+    hideElement(["#section-balance", "#section-category"]);
+  });
 
-const initializeApp = () =>{
-    setData("input", allDates)// se ejecuta esta linea y me envia el array vacio al local s
-    //si no hay datos me da un array vacío
-    renderInput(allDates) || []
-    // categoria
-    $("#category-options").addEventListener("click", (e) => {
-        e.preventDefault()
-        $("#section-balance").classList.add("hidden", "lg:hidden")
-        $("#section-category").classList.remove("hidden", "lg:hidden")
-        $("#section-reportes").classList.add("hidden", "lg:hidden")  
-    })
-   // reportes
-   $("#reports-option").addEventListener("click", (e) => {
-    e.preventDefault()
-      $("#section-reportes").classList.remove("hidden", "lg:hidden")
-      $("#section-balance").classList.add("hidden", "lg:hidden")
-      $("#section-category").classList.add("hidden ,lg:hidden")
-      
-        
-      })
+  //nav balance vuelvo a balance principal ok
+  $("#balance-options").addEventListener("click", () => {
+    showElement(["#section-balance"]);
+    hideElement(["#section-reportes", "#section-category", "#new-operation-appear"]);
+  });
 
-      //vuelve a balance 
-      $("#balance-options").addEventListener("click", () => {
-        $("#section-balance").classList.remove("hidden", "lg:hidden")
-        $("#section-reportes").classList.add("hidden", "lg:hidden")
-        $("#section-category").classList.add("hidden", "lg:hidden")
-        $("#new-operation-appear").classList.add("hidden", "lg:hidden")
-        
-      })
+  // nueva operacion  ok
+  $("#new-operation-add-opp").addEventListener("click", (e) => {
+    e.preventDefault();
+    showElement(["#new-operation-appear"]);
+    hideElement(["#section-balance"]);
+    
+  });
+// agregar la nueva op
+  $("#new-operation-accept").addEventListener("click", (e) => {
+    e.preventDefault();
+    const currentData = getData("input") || [];
+    currentData.push(saveData());
+    setData("input", currentData);
+    renderInput();
+  });
 
-// nueva operacion
+  // vuelvo  de aceptar en nueva operacion a balance OK
+  $("#new-operation-accept").addEventListener("click", (e) => {
+    e.preventDefault();
+    showElement(["#section-balance"]);
+    hideElement(["#new-operation-appear"]);
+  });
 
-$("#new-operation-add").addEventListener("click", (e) => {
-    e.preventDefault()
-    $("#section-balance").classList.add("hidden","lg:hidden")
-    $("#new-operation-appear").classList.remove("hidden","lg:hidden")
+  //editar la operacion
+  $("#edit-operation-btn").addEventListener("click", (e) => {
+    e.preventDefault();
+    const inputId = $("#edit-operation-btn").getAttribute("data-id");
+    const currentData = getData("input") || [];
+    const updatedData = currentData.map((input) => (input.Id === inputId ? saveData() : input));
+    setData("input", updatedData);
+    renderInput();
+  });
 
-})
-$("#new-operation-add-op").addEventListener("click", (e) => {
-    e.preventDefault()
-    $("#section-balance").classList.add("hidden","lg:hidden")
-    $("#new-operation-appear").classList.remove("hidden","lg:hidden")
+  window.location.href = "index.html";
+};
 
-})
+window.addEventListener("load", initializeApp);
 
-//Que la información de mi nueva operacion se envie luego de hacer click en agregar, se envia a un objeto vacio, pero luego lo pasamos al local storage
-// dataInput objeto
-$("#new-operation-accept").addEventListener("click", (e) => {
-    e.preventDefault()
-    const currentdata = getData("input") //pido la info
-    currentdata.push(saveData()) //mnodifico
-    setData("input",currentdata) //envio la informacion
-})
+// primer funcion renderizar datos de tabla:
 
-}
-window.addEventListener("load",initializeApp)
+const renderInput = () => {
+  const tableBody = $("#table-operaciones tbody");
+  const currentData = getData("input") || [];
 
-// // Función para renderizar los datos inputs en la tabla
+  tableBody.innerHTML = "";
 
-const renderInput = (input) => {
-     for(const dataInput of dataInputs) {
-       $("#table-operaciones").innerHTML += `
-            <tr>
-                <td>${dataInput.descripcion}</td>
-                <td>${dataInput.categoria}</td>
-                <td>${dataInput.fecha}</td>
-                <td>${dataInput.monto}</td>
-                <td>
-                <button onclick="editOperation('${input.Id}')">Editar</button>
-                <button onclick="deleteOperation('${input.Id}')">Eliminar</button>
-                </td>
-            </tr>
-        `
-            }
-}
+  currentData.forEach((input) => {
+    const row = document.createElement("tr");
+    row.innerHTML += `
+    <tr>
+        <td class="">${input.descripcion}</td>
+        <td class="">${input.categoria}</td>
+        <td class="">${input.fecha}</td>
+        <td class="">${input.monto}</td>
+      <th class="bg-white mr-4 mt-12 ml-6 p-6 rounded lg:w-11/12 xl:w-6/12 pl-16 hidden lg:hidden">
+        <button class="mb-2 mt-5" onclick="editOperation('${input.Id}')" id="edit-operation-btn">Editar</button>
+        <button onclick="deleteOperation('${input.Id}')" id="delete-operation-btn">Eliminar</button>
+      </th>
+    </tr>
+    `;
+    
+  });
+};
 
 renderInput()
 
-// envio la informacion input como un objeto
-const saveData = () =>{
-//guardo el valor de los input,con input.value
-return {
-        Id: idGeneration(),
-        descripcion: $("#new-operation-description").value,  
-        monto: $("#new-operation-amount").value,
-        tipo: $("#new-operation-type").value,  
-        categoria: $("#new-operation-category").value,  
-        fecha: $("#new-operation-date").value,
-}
 
-}
+//guardo info de formularios en objeto
 
-//------------------------------------------
+const saveData = () => {
+  return {
+    id: idGeneration(),
+    descripcion: $("#new-operation-description").value,
+    monto: $("#new-operation-amount").value,
+    tipo: $("#new-operation-type").value,
+    categoria: $("#new-operation-category").value,
+    fecha: $("#new-operation-date").value,
+  };
+};
 
+const showFormEdit = (inputId) => {
+  hideElement(["#table-operaciones"]);
 
+  $("#new-operation-accept").setAttribute("data-id", inputId);
+  const inputSelected = getData("input").find((input) => input.Id === inputId);
+
+  $("#new-operation-description").value = inputSelected.descripcion;
+  $("#new-operation-amount").value = inputSelected.monto;
+  $("#new-operation-type").value = inputSelected.tipo;
+  $("#new-operation-category").value = inputSelected.categoria;
+  $("#new-operation-date").value = inputSelected.fecha;
+
+  showElement(["#form-edit"]);
+};
