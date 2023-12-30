@@ -118,6 +118,7 @@ const renderInput = () => {
   currentData.forEach((input) => {
     console.log("Input:", input);
     const row = document.createElement("tr");
+    row.id = `row-${input.Id}` // identidicador para bnt eliminar linea table
     row.innerHTML += `
       <td class="text-center">${input.descripcion}</td>
       <td class="text-center">${input.categoria}</td>
@@ -135,6 +136,25 @@ const renderInput = () => {
 
 renderInput();
 
+// Función para eliminar operación
+const deleteOperation = (inputId) => {
+  const currentData = getData("input") || [];
+
+  // Encuentra el índice de la operación a eliminar
+  const indexToDelete = currentData.findIndex((input) => input.Id === inputId);
+
+  // Elimina la operación de la matriz de datos
+  currentData.splice(indexToDelete, 1);
+
+  // Actualiza los datos en el almacenamiento local
+  setData("input", currentData);
+
+  // Elimina la fila correspondiente de la tabla por su identificador único
+  const rowToDelete = $(`#row-${inputId}`);
+  if (rowToDelete) {
+    rowToDelete.remove();
+  }
+}; 
 
 //guardo info de formularios en objeto
 
