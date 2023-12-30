@@ -86,16 +86,21 @@ const initializeApp = () => {
   });
 
   //editar la operacion
-  $("#edit-operation-btn").addEventListener("click", (e) => {
+  $("#new-operation-edit").addEventListener("click", (e) => {
     e.preventDefault();
-    const inputId = $("#edit-operation-btn").getAttribute("data-id");
+    const inputId = $("#new-operation-edit").getAttribute("data-id");
     const currentData = getData("input") || [];
     const updatedData = currentData.map((input) => (input.Id === inputId ? saveData() : input));
     setData("input", updatedData);
     renderInput();
   });
 
-  window.location.href = "index.html";
+   // nuevo evento para el botón de cancelar nueva operación
+   $("#new-operation-cancel").addEventListener("click", (e) => {
+    e.preventDefault();
+    showElement(["#section-balance"]);
+    hideElement(["#new-operation-appear"]);
+  });  
 };
 
 window.addEventListener("load", initializeApp);
@@ -108,25 +113,27 @@ const renderInput = () => {
 
   tableBody.innerHTML = "";
 
+  console.log("Current Data:", currentData);  
+
   currentData.forEach((input) => {
+    console.log("Input:", input);
     const row = document.createElement("tr");
     row.innerHTML += `
-    <tr>
-        <td class="">${input.descripcion}</td>
-        <td class="">${input.categoria}</td>
-        <td class="">${input.fecha}</td>
-        <td class="">${input.monto}</td>
-      <th class="bg-white mr-4 mt-12 ml-6 p-6 rounded lg:w-11/12 xl:w-6/12 pl-16 hidden lg:hidden">
-        <button class="mb-2 mt-5" onclick="editOperation('${input.Id}')" id="edit-operation-btn">Editar</button>
+      <td class="text-center">${input.descripcion}</td>
+      <td class="text-center">${input.categoria}</td>
+      <td class="text-center">${input.fecha}</td>
+      <td class="text-center">${input.monto}</td>
+      <th class="text-teal-400 text-center">
+        <button class="mb-2" onclick="editOperation('${input.Id}')" id="edit-operation-btn">Editar</button>
         <button onclick="deleteOperation('${input.Id}')" id="delete-operation-btn">Eliminar</button>
       </th>
-    </tr>
     `;
-    
+
+    tableBody.appendChild(row);
   });
 };
 
-renderInput()
+renderInput();
 
 
 //guardo info de formularios en objeto
@@ -134,7 +141,7 @@ renderInput()
 const saveData = () => {
   return {
     id: idGeneration(),
-    descripcion: $("#new-operation-description").value,
+    descripcion: $("#new-operation-description-op").value,
     monto: $("#new-operation-amount").value,
     tipo: $("#new-operation-type").value,
     categoria: $("#new-operation-category").value,
